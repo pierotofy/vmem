@@ -8,7 +8,7 @@ INSTALL_REQUIRES=[]
 
 setuptools.setup(
     name="vmem",
-    version="1.0.0",
+    version="1.0.1",
     author="Piero Toffanin",
     author_email="pt@uav4geo.com",
     description="Cross-platform virtual memory information",
