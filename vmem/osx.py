@@ -11,12 +11,12 @@ def virtual_memory():
     total = avail = percent = used = free = 0
     pagesize = resource.getpagesize()
 
-    out = subprocess.check_output(["sysctl", "hw.memsize"])
+    out = subprocess.check_output(["sysctl", "hw.memsize"]).decode("utf8")
     matches = sys_regex.match(out)
     if matches:
         total = int(matches.group(1))
 
-        out = subprocess.check_output(["vm_stat"])
+        out = subprocess.check_output(["vm_stat"]).decode("utf8")
         params = {}
         for line in out.split("\n"):
             matches = vm_regex.match(line)
